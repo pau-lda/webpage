@@ -1,46 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Tab from '../components/Tab.astro';
 import '../styles/global.css';
+import TabBar from '../components/TabBar.astro';
 ---
 
 <Layout title="Welcome to Astro.">
+	<header>
+		<TabBar transition:name="tabs" transition:persist transition:animate="slide"/>
+		
+	</header>
 	<main>
-			
-		<ul role="list" class="tab-bar">
-			
-			<Tab
-				href="./tabs/projects"
-				title="Projects"
-			/>
-			<Tab
-				href="./tabs/resume"
-				title="CV"
-			/>
-			<Tab
-				href="./tabs/about"
-				title="Impressum"
-			/>
-		</ul>
+		
 	</main>
 </Layout>
 
 <style>
-	
 	.tab-bar {
-		list-style-type: none;
-		float: right;
-		padding: 0;
-		overflow: hidden;
-
-		width: 80%;
-		display: flex;
-        flex-direction: row;
-		flex-wrap: wrap;
+		float: none;
 		
-		border: 2px solid;
-		border-radius: 10px;
-		border-color: #3c2895;
+		transform: scale(1.3);
 	}
-
 </style>
