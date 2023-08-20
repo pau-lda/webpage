@@ -1,14 +1,15 @@
 ---
 interface Props {
-    
 }
 
-import ViewTransitions from 'astro/components/ViewTransitions.astro';
 import Tab from './Tab.astro';
 ---
-<ViewTransitions/>
 
-<ul role="list" class="tab-bar" id="tab-bar">
+<div role="list" class="tab-bar" id="tab-bar" transition:name="tab-bar">
+    <Tab 
+        href='/index.html'
+        title='Home'
+    />
     <Tab 
         href='/tabs/projects'
         title='Projects'
@@ -18,23 +19,30 @@ import Tab from './Tab.astro';
         title='Resume'
     />
     <Tab 
-        href='/tabs/projects'
-        title='Projects'
+        href='/tabs/about'
+        title='About'
     />
-</ul>
+</div>
 
 
-<style>
+<style is:global>
 	.tab-bar {
-		list-style-type: none;
+        justify-content: space-evenly;
+        align-items: center;
+        
 		float: right;
-		padding: 0;
 		overflow: hidden;
+        margin-right: 10px;
 
-		width: 50rem;
+        width: 40em;
+            max-width: calc(100% - 2rem);
+        height: calc(100% - 2em);
+
 		display: flex;
-        flex-direction: row;
-		flex-wrap: wrap;
+            flex-direction: row;
+		    flex-wrap: wrap;
+
+        position: relative;
 		
 		border: 2px solid;
 		border-radius: 10px;
