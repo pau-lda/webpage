@@ -1,21 +1,37 @@
 ---
 
 import Layout from '../layouts/Layout.astro';
-import TabBar from '../components/TabBar.astro';
 import '../styles/global.css';
+import TabBar from '../components/TabBar.astro';
 
 ---
 
-<Layout title="Welcome to Astro.">
-	<TabBar slot="after-header"/>	
+<Layout title="Webpage">
+	<div class="placeholder"></div>
+	<div class="navigation">
+		<TabBar exclude='Home'/>
+	</div>
 	<main>
 			
 	</main>
 </Layout>
-
 <style>
-	.tab-bar {
-		clear: both;
+	.placeholder {
+		height: 10vh;
+		width: 100%;
+	}
+	.navigation {
+		margin: 20px;
+		height: 25vw;
+		width: calc(100% - 15px);
+		display: block;
+		display: inline-block;
 		float: left;
+	}
+
+</style>
+<style is:inline>
+	.tab-bar {
+		width: 100%;
 	}
 </style>

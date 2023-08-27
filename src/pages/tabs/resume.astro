@@ -1,13 +1,43 @@
 ---
 import TabBar from "../../components/TabBar.astro";
+import Work from "../../components/Work.astro";
 import Layout from "../../layouts/Layout.astro";
 import '../../styles/global.css';
+import workData from '../../data/raw/dataWork.json';
 ---
 
 <Layout title="Resume">
-    <TabBar slot="after-header"/>
+    <TabBar slot="header-container"/>
     <main>
-
+        {
+            workData.forEach((element, index) => {
+                return workData.map((item) => {
+                    return index === item.index &&
+                    <Work 
+                        company={item.company} 
+                        title={item.title} 
+                        date_start={new Date(item.date_start)} 
+                        date_end={new Date(item.date_end)}
+                        description={item.description}
+                    />   
+                })
+            })
+        }
+        {
+            workData.map((item) => {
+                    return item.index === 1 && 
+                    <Work 
+                        company={item.company} 
+                        title={item.title} 
+                        date_start={new Date(item.date_start)} 
+                        date_end={new Date(item.date_end)}
+                        description={item.description}
+                    />   
+                })
+        }
 
     </main>
 </Layout>
+
+<style>
+</style>

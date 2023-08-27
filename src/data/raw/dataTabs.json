@@ -1,0 +1,18 @@
+[
+    {
+        "title":"Home",
+        "href":"/"
+    },
+    {
+        "title":"Projects",
+        "href": "/tabs/projects/"
+    },
+    {
+        "title":"Resume",
+        "href":"/tabs/resume/"
+    },
+    {
+        "title":"About",
+        "href":"/tabs/about/"
+    }
+]

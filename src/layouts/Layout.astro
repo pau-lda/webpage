@@ -1,11 +1,12 @@
 --- 
-import ViewTransitions from 'astro/components/ViewTransitions.astro';
+import { ViewTransitions } from 'astro:transitions';
 
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
+
 ---
 
 <!DOCTYPE html>
@@ -17,16 +18,21 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<ViewTransitions />
+		<ViewTransitions fallback='animate'/>
 		
 	</head>
-	<header>
-		<slot name="header"/>
-	</header>
-	<body>
-		<slot name="body"/>
+	<body id="body" transition:persist>
+		<header>
+			<slot name="header"/>
+			<div class="header-container">
+				<slot name="header-container"/>
+			</div>
+		</header>
+		<slot/>
 	</body>
+	
 </html>
+
 <style>
-	import '../styles/global.css';
+	@import '../styles/global.css';
 </style>

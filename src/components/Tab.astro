@@ -8,17 +8,16 @@ const { title, href } = Astro.props;
 
 <div class="tab">
     <a href={href}>
-        
-            <h1>
-                {title}
-            </h1>
-        
+        <h1>
+            {title}
+        </h1>
     </a>
 </div>
 <style>
     .tab {
         flex: 1 0 0; /** stretches tab to full bar */
-        height: 100%;
+        height: 80%;
+        
     }
     .tab > a {
         text-decoration: none;
@@ -27,19 +26,25 @@ const { title, href } = Astro.props;
             justify-content: center;
         width: 100%;
         height: 100%;
+        
     }
     .tab > a > h1 {
+        color: var(--color1);
         position: relative;
         padding-bottom: 5px; /** shift upward to make it look centered */
-        font-size: 30px;
-        transition: 0.3s;
+        font-size: 5cqw;
+        transition: 0s;
         transition-timing-function:cubic-bezier(0.47, 0, 0.745, 0.715);
+        
     }
     .tab:is(:hover, :focus-within) {
+        border: 1px transparent;
+        border-radius: 20px;
         background-position: 0;
-        background-color: #5f3df5;
+        box-shadow: 10px 10px var(--color3);
+        /*background-color: var(--color3);*/
     }
     .tab:is(:hover, :focus-within) h1{
-        transform: scale(1.1);
+        transform: scale(1.05);
     }
 </style>

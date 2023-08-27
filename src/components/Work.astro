@@ -1,0 +1,36 @@
+---
+interface Props {
+    company         :string;
+    title           :string;
+    description     ?:string;
+    date_start      :Date;
+    date_end        :Date;
+}
+const {company,title,description,date_start,date_end} = Astro.props;
+---
+
+<div class="work-card-container">
+    <div class="work-card-branch">
+        <div class="branch"/>
+    </div>
+
+    <div class="work-card">
+        <h2>{company}</h2>
+        <h3>{title}</h3>
+        <p>Duration: {date_start.toDateString()} - {date_end.toDateString()}</p>
+        <p>{description}</p>
+    </div>
+</div>
+
+<style>
+    .work-card-container {
+        width: 100%;
+        height: 20vh;
+    }
+    .branch {
+        height: 100%;
+        width: 40px;
+        background-color: var(--color4);
+    }
+    
+</style>

@@ -3,16 +3,28 @@
     --accent-light: 224, 204, 250;
     --accent-dark: 49, 10, 101;
     --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
+    --color0 : #ebb672;
+    --color1 : #d9af78;
+    --color2 : #6c5332;
+    --color3 : #3a2408;
+    --color4 : #42392e;
 }
 html {
     font-family: system-ui, sans-serif;
-    background: #13151A;
+    background: var(--color4);
     background-size: 224px;
+    height: 100%;
+}
+body {
+    height: 100%;
 }
 header {
-    position: fixed;
     width: calc(100vw - 10px);
     height: 150px;
+}
+.header-container {
+    width: 100%;
+    height: 100%;
 }
 code {
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
@@ -22,10 +34,8 @@ main {
     margin: auto;
     padding: 1rem;
     width: 800px;
+    height: calc(100%-400px);
     max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-    
-    
+    color: var(--color0);
+    font-size: 20px;    
 }

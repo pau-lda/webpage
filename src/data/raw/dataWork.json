@@ -1,0 +1,26 @@
+[
+    {
+        "company":"Work1",
+        "title":"Worker1",
+        "description":"",
+        "date_start":"2015-12-24",
+        "date_end":"2019-12-24",
+        "index":0
+    },
+    {
+        "company":"abc",
+        "title":"abc",
+        "description":"",
+        "date_start":"2019-12-24",
+        "date_end":"2020-12-24",
+        "index":1
+    },
+    {
+        "company":"abc",
+        "title":"abc",
+        "description":"",
+        "date_start":"2020-12-24",
+        "date_end":"2022-12-24",
+        "index":2
+    }
+]
