@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "pauli",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,6 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.10.9"
+    "astro": "^3.0.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
   }
 }
