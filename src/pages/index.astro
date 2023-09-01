@@ -7,7 +7,6 @@ import TabBar from '../components/TabBar.astro';
 ---
 
 <Layout title="Webpage">
-	<div class="placeholder"></div>
 	<div class="navigation">
 		<TabBar exclude='Home'/>
 	</div>
@@ -16,14 +15,10 @@ import TabBar from '../components/TabBar.astro';
 	</main>
 </Layout>
 <style>
-	.placeholder {
-		height: 10vh;
-		width: 100%;
-	}
 	.navigation {
-		margin: 20px;
+		
 		height: 25vw;
-		width: calc(100% - 15px);
+		width: 100%;
 		display: block;
 		display: inline-block;
 		float: left;
@@ -31,7 +26,11 @@ import TabBar from '../components/TabBar.astro';
 
 </style>
 <style is:inline>
+	header {
+		/* height: 0;*/
+	}
 	.tab-bar {
-		width: 100%;
+		width: calc(100% - 20px);
+
 	}
 </style>
