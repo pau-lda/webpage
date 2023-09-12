@@ -1,0 +1,54 @@
+---
+interface props {
+    diameter    :number;
+    x_loc       :"left" | "right";
+    y_loc       :"bottom" | "top" | "middle" | "between-top-bot";
+    color       :string;
+    isHollow   ?:boolean;
+}
+
+const {diameter,x_loc,y_loc,color,isHollow} = Astro.props;
+---
+
+<div class:list={["knot",x_loc,y_loc,{hollow:isHollow}]}/>
+
+<style define:vars={{diameter,shade: color}}>
+    
+     .knot {
+        --radius: calc(var(--diameter) / 2);
+        z-index: 1;
+        position: absolute;
+        width: var(--diameter);
+        height: var(--diameter);
+        border-radius: var(--diameter);
+        background-color: var(--shade);
+    }
+    .top {
+        top: calc(0% - var(--radius));
+    }
+    .between-top-middle {
+        top: calc(30% - var(--radius));
+    }
+    .middle {
+        top: calc(50% - var(--radius));
+    }
+    .bottom {
+        top: calc(100% - var(--radius));
+    }
+    .left {
+        left: calc(0% - var(--radius));
+    }
+    .right {
+        left: calc(100% - var(--radius));
+    }
+    .hollow {
+        width: var(--radius);
+        height: var(--radius);
+        background-color: var(--color4);
+        border-style: solid;
+        --border-width: calc(var(--radius) * 0.7);
+        border-width: var(--border-width);
+        border-color: var(--shade);
+        left: calc(100% - calc(var(--radius) / 2) - var(--border-width));
+    }
+</style>

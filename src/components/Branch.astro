@@ -1,0 +1,34 @@
+---
+interface Props {
+    width   :string;
+    height  :string;
+}
+const {width,height} = Astro.props;
+import Knot from './Knot.astro';
+---
+
+<svg width={width} height={height} viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" class="svg">
+    <path 
+        fill="none"
+        vector-effect="non-scaling-stroke"
+        stroke=var(--color3)
+        stroke-width="0.4em"
+        d="M0,100 S0,85 50,75 M100,50 S100,65 50,75"
+    />
+    <path 
+        fill="none"
+        vector-effect="non-scaling-stroke"
+        stroke=var(--color3)
+        stroke-width="0.4em"
+        d="M100,50 S100,45 50,40 M0,30 S0,35 50,40"
+    />
+</svg>
+<Knot diameter=1em color=var(--color2) x_loc=left y_loc=between-top-middle />
+<Knot diameter=1em color=var(--color3) x_loc=right y_loc=middle isHollow />
+
+<style>
+    .svg {
+        position: absolute;
+        overflow: visible;
+    }
+</style>

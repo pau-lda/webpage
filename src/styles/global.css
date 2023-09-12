@@ -12,15 +12,14 @@
 html {
     font-family: system-ui, sans-serif;
     background-color: var(--color4);
-    background-size: 100%;
     height: 100%;
 }
 body {
     height: fit-content;
 }
 header {
-    width: calc(100vw - 10px);
-    height: 150px;
+    width: 100%;
+    height: 20vh;
 }
 .header-container {
     width: 100%;
@@ -33,7 +32,7 @@ code {
 main {
     margin: auto; 
     /* padding: 1rem; */
-    width: 800px;
+    width: 90%;
     height: calc(100%);
     max-width: calc(100% - 2rem);
     color: var(--color0);

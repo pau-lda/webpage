@@ -10,7 +10,7 @@ import workData from '../../data/raw/dataWork.json';
     <TabBar slot="header-container"/>
     <main>
         {
-            workData.map((item) => 
+            workData.sort((a,b) => Date.parse(b.date_start) - Date.parse(a.date_start)).map((item) => 
                 <Work 
                     company={item.company} 
                     title={item.title} 
