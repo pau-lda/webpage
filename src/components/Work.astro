@@ -40,7 +40,7 @@ const {company,title,description,date_start,date_end,index} = Astro.props;
         justify-content: center;
         flex-direction: row;
     }
-    .work-card-content:hover, .work-card:has(.line:hover) .work-card-content {
+    .work-card-content:hover, .work-card-content:active, .work-card:has(.line:hover) .work-card-content {
         background-color: var(--color3);
         border-radius: 10px;
     }
