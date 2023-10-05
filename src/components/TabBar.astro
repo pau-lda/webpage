@@ -12,8 +12,9 @@ const { tab, exclude, classes } = Astro.props;
 
 import Tab from "./Tab.astro";
 import tabData from "../data/raw/dataTabs.json"
+import { ViewTransitions } from "astro:transitions";
 ---
-
+<ViewTransitions fallback="none"/>
 <div role="list" id="tab-bar" class="tab-bar" transition:name="tab-bar">
     {
         tab && tab.map((item) => 
