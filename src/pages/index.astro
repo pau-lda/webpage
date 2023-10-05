@@ -7,31 +7,22 @@ import TabBar from '../components/TabBar.astro';
 ---
 
 <Layout title="Webpage">
-	<div class="navigation">
-		<TabBar exclude='Home'/>
-	</div>
-	<main>
-			
-	</main>
+	<TabBar exclude='Home' slot='header-container'/>
+	
 </Layout>
 <style>
-	.navigation {
-		
-		height: 25vw;
-		width: 100%;
-		display: block;
-		display: inline-block;
-		float: left;
-	}
-
 </style>
 <style is:inline>
-	header {
-		/* height: 0;*/
-	}
 	.tab-bar {
 		margin: auto;
 		width: calc(90%);
-		left:0;
+		align-items: center;
 	}
+	.tab {
+		height: 15vw !important;
+	}
+	header{
+		height: 90vh;
+	}
+	
 </style>

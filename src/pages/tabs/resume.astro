@@ -2,23 +2,23 @@
 import TabBar from "../../components/TabBar.astro";
 import Work from "../../components/Work.astro";
 import Layout from "../../layouts/Layout.astro";
-import '../../styles/global.css';
 import workData from '../../data/raw/dataWork.json';
 ---
 
 <Layout title="Resume">
-    <TabBar slot="header-container"/>
+    <TabBar slot="header-container" transition:persist/>
     <main>
         {
-            workData.sort((a,b) => Date.parse(b.date_start) - Date.parse(a.date_start)).map((item) => 
-                <Work 
+            workData.sort((a,b) => Date.parse(b.date_start) - Date.parse(a.date_start)).map((item,idx) => {
+                return <Work 
                     company={item.company} 
                     title={item.title} 
                     date_start={new Date(item.date_start)} 
                     date_end={new Date(item.date_end)}
                     description={item.description}
-                />   
-            )
+                    index={idx}
+                />
+            })
         }
 
     </main>

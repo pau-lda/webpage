@@ -2,6 +2,8 @@
 interface Props {
     width   :string;
     height  :string;
+    start   :Number;
+    end     :Number;
 }
 const {width,height} = Astro.props;
 import Knot from './Knot.astro';
@@ -23,12 +25,9 @@ import Knot from './Knot.astro';
         d="M100,50 S100,45 50,40 M0,30 S0,35 50,40"
     />
 </svg>
-<Knot diameter=1em color=var(--color2) x_loc=left y_loc=between-top-middle />
-<Knot diameter=1em color=var(--color3) x_loc=right y_loc=middle isHollow />
-
 <style>
     .svg {
-        position: absolute;
+        
         overflow: visible;
     }
 </style>
