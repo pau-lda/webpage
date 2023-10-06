@@ -15,7 +15,7 @@ import tabData from "../data/raw/dataTabs.json"
 import { ViewTransitions } from "astro:transitions";
 ---
 <ViewTransitions fallback="none"/>
-<div role="list" id="tab-bar" class="tab-bar" transition:name="tab-bar">
+<div role="list" class="tab-bar" transition:name="tab-bar">
     {
         tab && tab.map((item) => 
             item.align === "start" &&
@@ -39,6 +39,7 @@ import { ViewTransitions } from "astro:transitions";
     .tab-bar {
         container-type: inline-size; /* to set tab font-size relative to tab-bar width */
         justify-content: space-evenly;
+        align-items: center;
         
         display: flex;
         flex-direction: row;
@@ -46,12 +47,23 @@ import { ViewTransitions } from "astro:transitions";
         
         overflow: hidden;
         margin-left: auto;
-        padding-right: 1vw;
+        padding-right: 0.5vw;
+        margin-right: 1vw;
 
-        width: 55%;
-        max-width: 100%;
+        width: 40%;
         height: 100%;
 
         position: relative;
+
+        border-bottom: 2px solid;
+        border-color: var(--color2);
+    }
+
+    @media only screen and (max-width:700px) {
+        .tab-bar {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }        
     }
 </style>
