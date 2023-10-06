@@ -25,7 +25,8 @@ header {
 }
 @media only screen and (max-width: 700px) {
     header {
-        height: 14vw;
+        height: 20vw;
+        margin-bottom: 4vh;
     }
 }
 .header-container {
