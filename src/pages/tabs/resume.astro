@@ -9,7 +9,13 @@ import workData from '../../data/raw/dataWork.json';
     <TabBar slot="header-container" transition:persist/>
     <main>
         {
-            workData.sort((a,b) => Date.parse(b.date_start) - Date.parse(a.date_start)).map((item,idx) => {
+            workData.sort((a,b) => {
+                if(Number.isNaN(Date.parse(a.date_end))) // if no date_end is set, put first
+                    return -1;
+                if(Number.isNaN(Date.parse(b.date_end))) // if no date_end is set, put first
+                    return 1;
+                return Date.parse(b.date_end) - Date.parse(a.date_end) 
+            }).map((item,idx) => {
                 return <Work 
                     company={item.company} 
                     title={item.title} 
