@@ -17,6 +17,7 @@ html {
 body {
     height: fit-content;
     margin-top: 0;
+    margin-bottom: 0;
 }
 header {
     width: 100%;

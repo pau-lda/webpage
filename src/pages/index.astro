@@ -26,5 +26,25 @@ import TabBar from '../components/TabBar.astro';
 	header{
 		height: 90vh;
 	}
+
+	@media only screen and (max-width: 700px) {
+		header {
+			height: 95vh;
+			margin: 0;
+		}
+		.header-container {
+			padding-top: 1vh;
+			padding-bottom: 1vh;
+		}
+		.tab-bar {
+			width: 100%;
+			overflow: unset;
+		}
+		.tab {
+			flex: 0 0 90% !important;
+			align-self: stretch;
+			height: auto !important;
+		}
+	}
 	
 </style>
