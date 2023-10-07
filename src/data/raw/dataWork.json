@@ -1,13 +1,5 @@
 [
     {
-        "company":"Elementary School Gnigl",
-        "title":"Student",
-        "description":"Attended elementary school in Salzburg Gnigl.",
-        "date_start":"2010-09-01",
-        "date_end":"2014-07-01",
-        "index":0
-    },
-    {
         "company":"BRG Salzburg",
         "title":"Student",
         "description":"Attended gymnasium with focus on informatics.",

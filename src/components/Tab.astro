@@ -19,6 +19,8 @@ const { title, href } = Astro.props;
         height: 6vw;
         padding-left: 1vw;
         padding-right: 1vw;
+        transition: 0.1s;
+        transition-timing-function:cubic-bezier(0.47, 0, 0.745, 0.715);
     }
     .tab > a {
         text-decoration: none;
@@ -27,22 +29,20 @@ const { title, href } = Astro.props;
             justify-content: center;
         width: 100%;
         height: 100%;
-        
     }
     .tab > a > h1 {
         color: var(--color1);
         position: relative;
         padding-bottom: 0.5%; /** shift upward to make it look centered */
         font-size: 5cqw;
-        transition: 0s;
+        transition: 0.1s;
         transition-timing-function:cubic-bezier(0.47, 0, 0.745, 0.715);
     }
     .tab:is(:hover, :focus-within) {
         border: 1px transparent;
         border-radius: 20px;
         background-position: 0;
-        box-shadow: 0.3vw 0.3vw var(--color3);
-        /*background-color: var(--color3);*/
+        box-shadow: 0.3vw 0.3vw 0.3vw var(--color3);
     }
     .tab:is(:hover, :focus-within) h1{
         transform: scale(1.05);
@@ -50,16 +50,18 @@ const { title, href } = Astro.props;
     @media only screen and (max-width: 700px) {
         .tab {
             height: 15vw;
+            margin-left: 1vw;
+            margin-right: 1vw;
         }
         .tab > a > h1 {
             font-size: 5cqw;
         }
         .tab:is(:hover, :focus-within) {
             border-radius: 10px;
-            box-shadow: 0.7vw 0.7vw var(--color3);
+            box-shadow: 0.7vw 0.7vw 0.7vw var(--color3);
         }
         .tab:is(:hover, :focus-within) h1{
-        transform: scale(1.2);
-    }
+            transform: scale(1.2);
+        }
     }
 </style>

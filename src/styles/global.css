@@ -12,7 +12,7 @@
 html {
     font-family: system-ui, sans-serif;
     background-color: var(--color4);
-    height: 100%;
+    
 }
 body {
     height: 100%;
@@ -24,12 +24,7 @@ header {
     height: 8vw;
     margin-bottom: 7vh;
 }
-@media only screen and (max-width: 700px) {
-    header {
-        height: 20vw;
-        margin-bottom: 4vh;
-    }
-}
+
 .header-container {
     width: 100%;
     height: 100%;
@@ -41,8 +36,20 @@ code {
 main {
     margin: auto; 
     width: 90%;
-    height: calc(100% - 8vw - 7vh);
+    height: calc(100% - 8vw - 7vh);     /* minus header size + margin*/
     max-width: calc(100% - 2rem);
     color: var(--color0);
     font-size: 20px;    
+}
+@media only screen and (max-width: 700px) {
+    html {
+        height: 100%;
+    }
+    header {
+        height: 20vw;
+        margin-bottom: 4vh;
+    }
+    main {
+        height: calc(100% - 20vw - 4vh);
+    }
 }
